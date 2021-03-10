@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import model
 
 app = Flask(__name__)
 
@@ -9,8 +10,9 @@ def hello():
     else:
         username = request.form.get("username")
         password = request.form.get("password")
-        if username == "username" and password == "password":
-            return render_template("index.html", message="You're signed in")
+        if username == "jaytatum" and password == "boston":
+            message = model.show_color("jaytatum")
+            return render_template("football.html", message=message)
         else:
             error_message = "Hint: He curses a lot"
             return render_template("index.html", message=error_message)
