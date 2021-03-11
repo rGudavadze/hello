@@ -5,6 +5,12 @@
 {% endblock title %}
 
 {% block main %}
-    <h1>football is great!!!</h1>
-    <h2>{{ message }}</h2>
+    <h1>You are logged in!!!</h1>
+    <br><br>
+    
+    {{ message | safe }}
+
+    <br>
+    <a href="/logout">Log Out</a>
+
 {% endblock main %}
